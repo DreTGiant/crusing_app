@@ -1,21 +1,21 @@
 import React from "react";
 import "./App.css";
-import { HomePage } from "./pages/homepage/HomePage.component";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-const HatsPage = () => (
-  <div>
-    <p>Hello World</p>
-  </div>
-);
+import { HomePage } from "./pages/homepage/HomePage.component";
+import ShopPage from "./pages/shop/shop.component";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={HomePage} />
-          <Route path="/hats" compoent={HatsPage} />
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/shop">
+            <ShopPage />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
